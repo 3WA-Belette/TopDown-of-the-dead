@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -2904,11 +2904,20 @@ TextureImporter:
         y: 32
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -1, y: -23}
+        - {x: -13, y: -28}
+        - {x: -11, y: -21}
+        - {x: -16, y: -17}
+        - {x: -8, y: -11}
+        - {x: 8, y: -11}
+        - {x: 18, y: -14}
+        - {x: 12, y: -20}
+        - {x: 13, y: -30}
       tessellationDetail: 0
       bones: []
       spriteID: da9923fd5ffa4e446913981dee091c39
@@ -2929,7 +2938,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -1, y: -23}
+        - {x: -14, y: -27}
+        - {x: -11, y: -20}
+        - {x: -15, y: -16}
+        - {x: -6, y: -11}
+        - {x: 9, y: -11}
+        - {x: 19, y: -18}
+        - {x: 12, y: -20}
+        - {x: 11, y: -29}
       tessellationDetail: 0
       bones: []
       spriteID: b00baf140725c5748ad88227552579e8
@@ -4734,7 +4752,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Environment_215: 665664952
+      Environment_10: -1280603761
       Environment_76: -72255669
       Environment_251: 654892572
       Environment_27: -1507442582
@@ -4767,9 +4785,9 @@ TextureImporter:
       Environment_259: 637334129
       Environment_35: 1499433520
       Environment_39: 474941765
+      Environment_33: 1883742426
       Environment_42: -1877188384
       Environment_227: 315826983
-      Environment_33: 1883742426
       Environment_133: -658352808
       Environment_128: 1072387931
       Environment_104: 517259874
@@ -4890,22 +4908,22 @@ TextureImporter:
       Environment_9: 287881790
       Environment_157: -1848137650
       Environment_144: 206823146
-      Environment_187: -789735379
+      Environment_31: -507983247
       Environment_158: -758039168
       Environment_162: -416205287
+      Environment_187: -789735379
       Environment_213: -486335705
       Environment_256: 816775858
-      Environment_31: -507983247
+      Environment_219: -1465187835
       Environment_97: -394509973
       Environment_61: 1524819447
       Environment_22: 1515940875
       Environment_93: 196446414
       Environment_248: -1418091302
-      Environment_219: -1465187835
+      Environment_264: 1556433923
       Environment_206: -1337550512
       Environment_91: 1856841980
       Environment_236: -1876150632
-      Environment_264: 1556433923
       Environment_164: -1145043915
       Environment_109: -296469482
       Environment_169: -1336278163
@@ -5002,8 +5020,8 @@ TextureImporter:
       Environment_18: -437088262
       Environment_77: 599499057
       Environment_234: 1300008904
-      Environment_10: -1280603761
       Environment_204: -155751902
+      Environment_215: 665664952
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
