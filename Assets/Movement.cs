@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        _move.asset.Enable();
         _move.action.started += StartMove;
         _move.action.performed += UpdateMove;
         _move.action.canceled += StopMove;
@@ -38,15 +40,14 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log($"{_direction}");
+        //Debug.Log($"{_direction}");
 
         _animator.SetFloat("Horizontal", _aimDirection.x);
         _animator.SetFloat("Vertical", _aimDirection.y);
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
-        _animator.SetBool("IsRunning", _isRunning);
+        //_animator.SetBool("IsRunning", _isRunning);
 
         _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
-
 
         //if (_isRunning)
         //{
@@ -56,7 +57,6 @@ public class Movement : MonoBehaviour
         //{
         //    _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
         //}
-
     }
 
     private void StopMove(InputAction.CallbackContext obj)
