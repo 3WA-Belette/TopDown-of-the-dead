@@ -16,11 +16,11 @@ public class PlayerInteraction : MonoBehaviour
 
     void LaunchInteraction(InputAction.CallbackContext obj)
     {
-        _interactionInput.asset.Disable();
-        if(_currentFocus)
+        if(_currentFocus != null)
         {
-            _currentFocus?.LaunchPancarte();
+            _interactionInput.action.actionMap.Disable();
             _currentFocus.OnPancarteStop += ResumeGame;
+            _currentFocus.LaunchPancarte();
         }
     }
 

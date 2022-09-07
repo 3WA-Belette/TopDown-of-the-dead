@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class LogState : StateMachineBehaviour
 {
@@ -15,6 +16,11 @@ public class LogState : StateMachineBehaviour
 
         Debug.Log($"OH JE SUIS EN TRAIN DE JOUER LE STATE {stateInfo.fullPathHash}");
         GameObject.FindObjectOfType<TextMeshProUGUI>().text = _stateText;
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller)
+    {
+        base.OnStateExit(animator, stateInfo, layerIndex, controller);
     }
 
 }

@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator _animator;
 
     [SerializeField] float _speed;
+    [SerializeField] float _runSpeed;
     [SerializeField] PlayerState _state;
 
     Vector3 _direction;
@@ -59,7 +60,7 @@ public class Movement : MonoBehaviour
 
         if (_isRunning)
         {
-            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed * 2));
+            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _runSpeed));
         }
         else
         {

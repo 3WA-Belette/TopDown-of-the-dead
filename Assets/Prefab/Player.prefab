@@ -226,6 +226,7 @@ MonoBehaviour:
   _rb: {fileID: 6590367190416378565}
   _animator: {fileID: 6590367189943214328}
   _speed: 4
+  _runSpeed: 0
   _state: 0
 --- !u!1 &6590367189594824234
 GameObject:

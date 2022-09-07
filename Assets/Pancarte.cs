@@ -15,23 +15,32 @@ public class Pancarte : MonoBehaviour
     [Header("Conf")]
     [SerializeField, Multiline] string _text;
 
+    [SerializeField] UnityEvent _onPancarteCut;
 
     public event UnityAction OnPancarteStop;
+
     public void LaunchPancarte()
     {
+        // On gère l'UI
         _canvas.gameObject.SetActive(true);
         _renderText.text = _text;
 
-        _confirmationInput.asset.Enable();
+        // On gère les inputs
+        _confirmationInput.action.actionMap.Enable();
         _confirmationInput.action.started += WaitForInput;
     }
 
     void WaitForInput(InputAction.CallbackContext obj)
     {
-        _renderText.text = "";
-        _confirmationInput.asset.Disable();
+        // UI
         _canvas.gameObject.SetActive(false);
+        _renderText.text = "";
+
+        // Input
+        _confirmationInput.asset.Disable();
         _confirmationInput.action.started -= WaitForInput;
+
+        // Event C#
         OnPancarteStop?.Invoke();
     }
 }
