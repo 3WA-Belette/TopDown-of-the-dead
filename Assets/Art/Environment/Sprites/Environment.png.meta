@@ -4602,8 +4602,8 @@ TextureImporter:
         y: 0
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4785,9 +4785,9 @@ TextureImporter:
       Environment_259: 637334129
       Environment_35: 1499433520
       Environment_39: 474941765
-      Environment_33: 1883742426
       Environment_42: -1877188384
       Environment_227: 315826983
+      Environment_33: 1883742426
       Environment_133: -658352808
       Environment_128: 1072387931
       Environment_104: 517259874
@@ -4908,22 +4908,22 @@ TextureImporter:
       Environment_9: 287881790
       Environment_157: -1848137650
       Environment_144: 206823146
-      Environment_31: -507983247
+      Environment_187: -789735379
       Environment_158: -758039168
       Environment_162: -416205287
-      Environment_187: -789735379
       Environment_213: -486335705
       Environment_256: 816775858
-      Environment_219: -1465187835
+      Environment_31: -507983247
       Environment_97: -394509973
       Environment_61: 1524819447
       Environment_22: 1515940875
       Environment_93: 196446414
       Environment_248: -1418091302
-      Environment_264: 1556433923
+      Environment_219: -1465187835
       Environment_206: -1337550512
       Environment_91: 1856841980
       Environment_236: -1876150632
+      Environment_264: 1556433923
       Environment_164: -1145043915
       Environment_109: -296469482
       Environment_169: -1336278163

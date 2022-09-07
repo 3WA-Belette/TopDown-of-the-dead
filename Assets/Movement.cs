@@ -1,8 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
+
+enum PlayerState
+{
+    IDLE,
+    WALK,
+    RUN,
+    JUMP,
+    SWIN
+}
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +22,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Animator _animator;
 
     [SerializeField] float _speed;
+    [SerializeField] PlayerState _state;
 
     Vector3 _direction;
     Vector3 _aimDirection;
@@ -24,8 +35,8 @@ public class Movement : MonoBehaviour
         _move.action.performed += UpdateMove;
         _move.action.canceled += StopMove;
 
-        //_sprint.action.started += StartSprint;
-        //_sprint.action.canceled += StopSprint;
+        _sprint.action.started += StartSprint;
+        _sprint.action.canceled += StopSprint;
     }
 
     private void StopSprint(InputAction.CallbackContext obj)
@@ -41,22 +52,19 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         //Debug.Log($"{_direction}");
-
         _animator.SetFloat("Horizontal", _aimDirection.x);
         _animator.SetFloat("Vertical", _aimDirection.y);
         _animator.SetBool("IsMoving", _direction.magnitude > 0.1f);
-        //_animator.SetBool("IsRunning", _isRunning);
+        _animator.SetBool("IsRunning", _isRunning);
 
-        _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
-
-        //if (_isRunning)
-        //{
-        //    _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed * 2));
-        //}
-        //else
-        //{
-        //    _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
-        //}
+        if (_isRunning)
+        {
+            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed * 2));
+        }
+        else
+        {
+            _rb.MovePosition(_rb.transform.position + (_direction * Time.fixedDeltaTime * _speed));
+        }
     }
 
     private void StopMove(InputAction.CallbackContext obj)
